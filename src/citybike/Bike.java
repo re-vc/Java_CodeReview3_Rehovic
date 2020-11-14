@@ -14,7 +14,8 @@ public class Bike {
         nextBikeID++;
     }
 
-    public Bike(){}
+    public Bike() {
+    }
 
     // getter | setter
     public int getBikeID() {

@@ -41,11 +41,12 @@ public class Station {
     }
 
     // methods
-        // adds an existing Bike to the ArrayList
-    public void addBike(Bike bike){
-       bikes.add(bike);
+    // adds an existing Bike to the ArrayList
+    public void addBike(Bike bike) {
+        bikes.add(bike);
     }
-    public void removeBike(Bike bike){
+
+    public void removeBike(Bike bike) {
         bikes.remove(bike);
     }
 

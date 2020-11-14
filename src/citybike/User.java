@@ -1,7 +1,5 @@
 package citybike;
 
-import java.util.HashMap;
-
 public class User {
 
     private int userID;
@@ -16,6 +14,7 @@ public class User {
         this.surname = surname;
         this.currentlyRentedBike = currentlyRentedBike;
     }
+
     public User(int userID, String name, String surname) {
         this.userID = userID;
         this.name = name;
@@ -54,9 +53,10 @@ public class User {
     public void setCurrentlyRentedBike(Bike currentlyRentedBike) {
         this.currentlyRentedBike = currentlyRentedBike;
     }
+
     // methods
-    public void rentBike(Station station, Bike bike){
-        if(station.getBikes().contains(bike)){
+    public void rentBike(Station station, Bike bike) {
+        if (station.getBikes().contains(bike)) {
             station.removeBike(bike);
             setCurrentlyRentedBike(bike);
             System.out.println(name + " rented bike ID: " + currentlyRentedBike.getBikeID() + " - " + currentlyRentedBike.getColor() + " from " + station.getLocation());
@@ -64,11 +64,12 @@ public class User {
             System.out.println(name + " tried renting bike ID: " + bike.getBikeID() + " - " + bike.getColor() + " but it's not there. ");
         }
     }
-    public void returnBike(Station station, Bike bike){
-        if(station.getBikes().size()-1 == 5){
+
+    public void returnBike(Station station, Bike bike) {
+        if (station.getBikes().size() - 1 == 5) {
             System.out.println(name + " tried returning bike ID: " + bike.getBikeID() + " - " + bike.getColor() + " to " + station.getLocation() + " but it's already full.");
         } else {
-            if(getCurrentlyRentedBike() == bike){
+            if (getCurrentlyRentedBike() == bike) {
                 station.addBike(bike);
                 setCurrentlyRentedBike(null);
                 System.out.println(name + " returned bike ID: " + bike.getBikeID() + " - " + bike.getColor() + " to " + station.getLocation());
